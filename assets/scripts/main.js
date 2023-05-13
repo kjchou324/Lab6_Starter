@@ -73,6 +73,7 @@ function initFormHandler() {
   //            submit button is clicked
   document.querySelector('[type="submit"]').addEventListener('click', function(event) {
     // Steps B4-B9 will occur inside the event listener from step B3
+    if (!form.reportValidity()) return;
     event.preventDefault();
     // B4. Create a new FormData object from the <form> element reference above
     const formData = new FormData(form);
